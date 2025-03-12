@@ -1,0 +1,36 @@
+server:
+  port: 8080  # Cổng cho API Gateway
+
+spring:
+  application:
+    name: api-gateway
+  # Nếu dùng Config Server, bạn có thể dùng bootstrap.yml để import cấu hình
+   config:
+     import: "configserver:"
+
+  cloud:
+    gateway:
+      routes:
+        - id: product-service-route
+          uri: lb://product-service
+          predicates:
+            - Path=/products/**
+          filters:
+            - StripPrefix=1
+        - id: customer-service-route
+          uri: lb://customer-service
+          predicates:
+            - Path=/customers/**
+          filters:
+            - StripPrefix=1
+        - id: order-service-route
+          uri: lb://order-service
+          predicates:
+            - Path=/orders/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
