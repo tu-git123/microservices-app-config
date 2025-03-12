@@ -1,0 +1,20 @@
+server:https://github.com/tu-git123/microservices-app-config/tree/main
+  port: 8083  # Cổng của Customer Service
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_microservices_app?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none  # update, create, create-drop tuỳ thuộc vào nhu cầu
+    show-sql: true
+  # Nếu cần truy cập giao diện quản lý MySQL (thường không cần với MySQL, chỉ dùng H2 console)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  # URL của Eureka Server
