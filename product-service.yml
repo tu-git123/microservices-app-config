@@ -1,4 +1,4 @@
-server:https://github.com/tu-git123/microservices-app-config/tree/main
+server:
   port: 8081  # Cổng của Customer Service
 
 spring:
