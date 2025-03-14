@@ -15,20 +15,20 @@ spring:
           uri: lb://product-service
           predicates:
             - Path=/products/**
-          filters:
-            - StripPrefix=1
+          # filters:
+          #   - StripPrefix=1
         - id: customer-service-route
           uri: lb://customer-service
           predicates:
             - Path=/customers/**
-          filters:
-            - StripPrefix=1
+          # filters:
+          #   - StripPrefix=1
         - id: order-service-route
           uri: lb://order-service
           predicates:
             - Path=/orders/**
-          filters:
-            - StripPrefix=1
+          # filters:
+          #   - StripPrefix=1
 
 eureka:
   client:
