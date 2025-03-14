@@ -5,8 +5,8 @@ spring:
   application:
     name: api-gateway
   # Nếu dùng Config Server, bạn có thể dùng bootstrap.yml để import cấu hình
-   config:
-     import: "configserver:"
+   # config:
+   #   import: "configserver:"
 
   cloud:
     gateway:
