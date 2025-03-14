@@ -4,8 +4,8 @@ server:
 spring:
   application:
     name: customer-service
-  config:
-    import: "configserver:"
+  # config:
+  #   import: "configserver:"
   datasource:
     url: jdbc:mysql://localhost:3306/db_microservices_app?useSSL=false&serverTimezone=UTC
     username: root
